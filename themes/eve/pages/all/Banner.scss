@@ -1,0 +1,36 @@
+.banner-container {
+    overflow: hidden;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .scrolling-text {
+    animation: scrollLeft 20s linear infinite;
+  }
+  
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .banner-container {
+    overflow: hidden;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .scrolling-text {
+    display: flex;
+    white-space: nowrap;
+  }
+  
+  .horizontal-space {
+    margin-right: 120px; /* Ajusta el valor según sea necesario */
+  }
+  
