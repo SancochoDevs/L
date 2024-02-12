@@ -24,8 +24,7 @@
     },
     "system": {
       "theme": "eve",
-      "file_storage": "s3",
-      "extensions": [
+       "extensions": [
              
 
         {
