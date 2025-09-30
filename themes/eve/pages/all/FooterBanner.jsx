@@ -10,7 +10,7 @@ function FooterBanner() {
           </div>
           <div className="flex justify-center items-center">
             <div className="flex gap-2 ">
-             <div className="textobajo"> La tienda donde la naturaleza se convierte en arte</div>
+             <div className="textobajo"> PUFF, PUFF, PASS</div>
               
             </div>
           </div>

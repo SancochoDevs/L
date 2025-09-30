@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./FreeShippingBar.scss";
 function FreeShippingBar() {
   return (
     <div className="page-width">

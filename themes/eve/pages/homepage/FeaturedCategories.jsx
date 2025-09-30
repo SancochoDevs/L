@@ -11,7 +11,7 @@ function FeaturedCategories() {
           <a
             className="absolute underline top-[20px] left-[20px] bg-white px-2"
             href="/Minerales/bruto">
-            MINERAL MASIVO
+            GRINDERS
           </a>
         </div>
         <div className="relative col-span-1 row-span-1 women-cat">
@@ -19,7 +19,7 @@ function FeaturedCategories() {
           <a
             className="absolute underline top-[20px] left-[20px] bg-white px-2"
             href="/artesanias">
-            ARTESANIAS
+            PAPES
           </a>
         </div>
         <div className="relative col-span-1 row-span-1 kid-cat">
@@ -27,7 +27,7 @@ function FeaturedCategories() {
           <a
             className="absolute underline top-[20px] left-[20px] bg-white px-2"
             href="/Joyas">
-            JOYERIA DE PLATA
+            FIRE
           </a>
         </div>
       </div>

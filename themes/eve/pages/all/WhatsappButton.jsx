@@ -22,7 +22,7 @@ const WhatsAppButton = () => {
       {isWhatsappActive && (
         <div className="popup">
           <span>Haz clic para contactarnos por WhatsApp para mayor información.</span>
-          <a href="https://wa.me/34675136652" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/34611287574" target="_blank" rel="noopener noreferrer">
             Enviar mensaje de WhatsApp
           </a>
         </div>

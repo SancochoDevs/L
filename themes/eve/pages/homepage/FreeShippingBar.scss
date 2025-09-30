@@ -1,0 +1,133 @@
+/* FreeShippingBar.scss
+   Estilo premium en blanco/negro, tipografía clara, divisores sutiles,
+   efectos suaves y soporte dark mode.
+*/
+
+.free-shipping-bar {
+  /* Paleta base (puedes ajustar a tu marca) */
+  --fs-bg: #ffffff;
+  --fs-fg: #0b0b0b;
+  --fs-muted: #6b7280;      /* gris medio para textos secundarios */
+  --fs-border: #e5e7eb;     /* gris claro para bordes */
+  --fs-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+  background: var(--fs-bg);
+  color: var(--fs-fg);
+
+  /* Contenedor visual */
+  > .grid {
+    border: 1px solid var(--fs-border);
+    border-radius: 16px;
+    box-shadow: var(--fs-shadow);
+    overflow: hidden;
+    backdrop-filter: saturate(120%);
+  }
+
+  /* Ítems */
+  > .grid > div {
+    padding: clamp(14px, 2vw, 20px);
+    position: relative;
+    background: linear-gradient(180deg, rgba(0,0,0,0.015), transparent 40%);
+    transition: transform 220ms ease, background 220ms ease;
+
+    /* divisor entre columnas (desktop) */
+    @media (min-width: 768px) {
+      &:not(:last-child) {
+        border-right: 1px solid var(--fs-border);
+      }
+    }
+
+    /* divisor cuando está en una columna (mobile) */
+    @media (max-width: 767.98px) {
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--fs-border);
+      }
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(180deg, rgba(0,0,0,0.03), transparent 50%);
+    }
+  }
+
+  /* Títulos y párrafos */
+  h2 {
+    margin: 0 0 6px;
+    font-weight: 650;
+    letter-spacing: 0.2px;
+    font-size: clamp(15px, 1.6vw, 18px);
+    line-height: 1.2;
+  }
+
+  p {
+    margin: 0;
+    color: var(--fs-muted);
+    font-size: clamp(13px, 1.5vw, 15px);
+    line-height: 1.5;
+  }
+
+  /* Iconografía con pseudo-elementos (sin tocar el JSX)
+     Ajusta los SVG si quieres otros iconos. Se pintan con currentColor.
+  */
+  > .grid > div::before {
+    content: "";
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    vertical-align: -3px;
+    background: currentColor;
+    opacity: 0.9;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
+  /* 1) Envío gratis (camión) */
+  > .grid > div:nth-child(1)::before {
+    mask-image: url("data:image/svg+xml;utf8,\
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'>\
+      <path d='M3 7h11v7h-1a2 2 0 0 0-2 2H8a2 2 0 0 0-2 2H4a1 1 0 0 1-1-1V7zm12 0h3.586L21 9.414V14h-2a2 2 0 0 0-2 2h-1V7zM7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'/></svg>");
+  }
+
+  /* 2) Envíos internacionales (globo) */
+  > .grid > div:nth-child(2)::before {
+    mask-image: url("data:image/svg+xml;utf8,\
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'>\
+      <path d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 2.1c-2.7.3-5 2.2-5.8 4.8H11V4.1zM4.2 13c.7 2.6 3 4.6 5.8 4.9V13H4.2zm6.8 4.9c2.8-.3 5.1-2.3 5.8-4.9H11v4.9zm6-6.9c-.7-2.6-3-4.5-5.8-4.8V11h5.8z'/></svg>");
+  }
+
+  /* 3) Piedras naturales (diamante) */
+  > .grid > div:nth-child(3)::before {
+    mask-image: url("data:image/svg+xml;utf8,\
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'>\
+      <path d='M12 3l3.5 4.5L12 21 8.5 7.5 12 3zm-6.2 4.5L8.5 7.5 6 11 3.8 7.5zM15.5 7.5l2.7 0L20.2 11 15.5 7.5z'/></svg>");
+  }
+
+  /* Alinear icono con el título (h2) */
+  > .grid > div h2 {
+    display: inline-block;
+  }
+
+  /* Estado de enfoque para accesibilidad */
+  > .grid > div:focus-within {
+    outline: 2px solid #111;
+    outline-offset: -2px;
+  }
+
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    --fs-bg: #0d0f12;
+    --fs-fg: #f5f7fa;
+    --fs-muted: #aeb4bf;
+    --fs-border: #1f2937;
+    --fs-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Reduce motion */
+  @media (prefers-reduced-motion: reduce) {
+    > .grid > div {
+      transition: none;
+    }
+  }
+}
